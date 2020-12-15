@@ -6,7 +6,7 @@ jobs:
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
-      - run: echo "A first hello"
+      - run: kubectl version
       - run: sleep 25
   two:
     docker:
@@ -15,17 +15,9 @@ jobs:
       - checkout
       - run: echo "A more familiar hi"
       - run: sleep 15
-  Three:
-    docker:
-      - image: circleci/ruby:2.4.1
-    steps:
-      - checkout
-      - run: echo "Three"
-      - run: sleep 10
 workflows:
   version: 2
   one_and_two:
     jobs:
       - one
       - two
-      - Three
