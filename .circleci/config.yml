@@ -6,6 +6,7 @@ jobs:
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
+      - kubernetes/install-kubectl
       - run: kubectl version
       - run: sleep 25
   two:
@@ -15,6 +16,8 @@ jobs:
       - checkout
       - run: echo "A more familiar hi"
       - run: sleep 15
+orbs:
+  kubernetes: circleci/kubernetes@1.0.0
 workflows:
   version: 2
   one_and_two:
