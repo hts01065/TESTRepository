@@ -14,7 +14,7 @@ jobs:
     steps:
       - checkout
       - kubernetes/install-kubectl
-      - run: kubectl exec nginx-deployment-574b87c764-c429r -- date
+      - run: kubectl exec nginx-deployment-574b87c764-c429r　--kubeconfig=.circleci/kube/cicd-config -- date
 orbs:
   kubernetes: circleci/kubernetes@0.11.2
 workflows:
