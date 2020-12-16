@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - kubernetes/install-kubectl
-      - run: kubectl get pods
+      - run: kubectl get pods --kubeconfig=/kube/cicd-config
   two:
     docker:
       - image: circleci/ruby:2.4.1
