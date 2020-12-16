@@ -4,10 +4,10 @@ jobs:
   one:
     docker:
       - image: circleci/ruby:2.4.1
+    working_directory: ~/kube
     steps:
       - checkout
       - kubernetes/install-kubectl
-      working_directory: ~/kube
       - run: kubectl get pods --kubeconfig=cicd-config
   two:
     docker:
